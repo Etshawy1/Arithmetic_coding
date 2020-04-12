@@ -74,8 +74,7 @@ for i in range(len(codes)):
         codes[i] = (codes[i] - lower_bound) / current_range
 
 
-decode_flattened = decoded_blocks.flatten()
-decoded_img = np.reshape(decode_flattened, (256, 256)) 
+decoded_img = np.reshape(decoded_blocks, (256, 256)) 
 decoded_img = decoded_img.astype(np.uint8)
 
 cv2.imshow('Gray image', decoded_img)

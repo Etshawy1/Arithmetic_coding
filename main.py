@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Apr 12 04:08:19 2020
-
 @author: etshawy
 """
 
@@ -11,12 +10,12 @@ import numpy as np
 
 img = cv2.imread("baboon.bmp")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-block_size = 8
+block_size = 16
 
 
 data = np.array(img)
 flattened = data.flatten()
-probabilities = np.zeros(256, np.float64)
+probabilities = np.zeros(256, np.float16)
 
 # calculate probabilites
 for pixel in flattened:
@@ -40,7 +39,7 @@ blocks = np.reshape(flattened, (int(len(flattened)/block_size), block_size))
 # encoding each block
 sum_previous_symbols_probs = np.cumsum(prob_values)
 
-codes = np.zeros(len(blocks), np.float64)
+codes = np.zeros(len(blocks), np.float16)
 
 for i in range(len(blocks)):
     lower_bound = 0
@@ -80,6 +79,3 @@ decoded_img = decoded_img.astype(np.uint8)
 cv2.imshow('Gray image', decoded_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-    
-    

@@ -59,6 +59,8 @@ def encode(img, block_size, data_type):
         lower_bound = 0
         upper_bound = 1
         for symbol in blocks[i]:
+            if not symbol in prob_keys:
+                continue
             current_symbol_index = prob_keys.index(symbol)
             current_range = upper_bound - lower_bound
             upper_bound = lower_bound + (current_range * d[current_symbol_index]) 

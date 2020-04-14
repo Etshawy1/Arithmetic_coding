@@ -1,4 +1,4 @@
-# Artithmetic encoding
+# Gray scale images Arithmetic Coding
 
 ## prerequisites
 

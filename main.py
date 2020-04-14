@@ -22,8 +22,8 @@ data_type = user_input.input_data_type("""please choose one of the following typ
     4-float128
     """)
 
-img = cv2.imread(path)
-height, width, channels = img.shape
+img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+height, width = img.shape
 
 probabilities = arith_encode.encode(img, block_size, data_type)
 arith_decode.decode(height, width, block_size, probabilities)

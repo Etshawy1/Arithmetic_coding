@@ -18,8 +18,3 @@ python `3.7`
 
 6. you will find decoded output for `image.npy` in `output.png`
 
-## Author
-
-    Muhammad Ahmad Hesham Mahmoud
-    Sec: 2
-    B.N: 17
